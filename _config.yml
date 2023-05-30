@@ -18,12 +18,10 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Your awesome title
+title: Anandhu Krishnan G | Anandhu | developer
 email: your-email@example.com
-description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+description: >- 
+  "Looking for top-tier developers who are skilled in Java, Python, and Jekyll. Whether it's data science, web development, or mobile development, Skilled staff can assist you with any software development work you need. We can help with your next project using our knowledge of the flexible programming language Python and the static site generator Jekyll. For more information contact us right."
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: jekyllrb
