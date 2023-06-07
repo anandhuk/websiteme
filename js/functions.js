@@ -5,6 +5,9 @@ $( document ).ready(function() {
   // DOMMouseScroll included for firefox support
   var canScroll = true,
       scrollController = null;
+  particlesJS.load('particle-js', '/particles.json', function() {
+  console.log('callback - particles.js config loaded')});
+
   $(this).on('mousewheel DOMMouseScroll', function(e){
 
     if (!($('.outer-nav').hasClass('is-vis'))) {
@@ -64,14 +67,14 @@ $( document ).ready(function() {
   });
 
   // swipe support for touch devices
-  var targetElement = document.getElementById('viewport'),
-      mc = new Hammer(targetElement);
-  mc.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
-  mc.on('swipeup swipedown', function(e) {
+  // var targetElement = document.getElementById('viewport'),
+  //     mc = new Hammer(targetElement);
+  // mc.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
+  // mc.on('swipeup swipedown', function(e) {
 
-    updateHelper(e);
+  //   updateHelper(e);
 
-  });
+  // });
 
   $(document).keyup(function(e){
 
