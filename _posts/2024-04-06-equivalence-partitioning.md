@@ -15,8 +15,6 @@ permalink : /article/equivalence-partitioning.html
 tags: equivalence partitioning, test case design, black box testing, software testing techniques, test case examples, QA testing methods, input partitioning
 ---
 
-![Equivalence Partitioning Banner](https://example.com/equivalence-partitioning-banner.jpg)
-*Image Alt Text: Equivalence Partitioning technique for software testing*
 
 ## What is Equivalence Partitioning?
 
