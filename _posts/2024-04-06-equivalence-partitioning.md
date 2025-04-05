@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Equivalence Partitioning: A Beginner's Guide to Effective Test Case Design"
-date:   2024-03-01 02:22:37 +0530
+date:   2024-04-06 02:22:37 +0530
 categories: Test Cases
 author: anandhu
 categories: [ testing, testcases ]
