@@ -1,8 +1,7 @@
 ---
-layout: post
-title:  "Equivalence Partitioning: A Beginner's Guide to Effective Test Case Design"
+layout: stylish-post
+title:  "Boundary Value Analysis: A Beginner's Guide to Effective Test Case Design"
 date:   2024-04-06 02:22:37 +0530
-categories: Test Cases
 author: anandhu
 categories: [ testing, testcases ]
 tags: [testing, testcases]
@@ -11,9 +10,10 @@ featured: true
 hidden: false
 rating: 4.5
 description: Learn Boundary Value Analysis with practical examples. This beginner's guide explains BVA testing, its benefits, and how to apply it with real-world scenarios.
-permalink : /article/boundary-value-analysis.html
+permalink: /article/boundary-value-analysis.html
 tags: boundary value analysis, BVA testing, test case design, black box testing, software testing techniques, boundary testing examples, QA testing methods, edge case testing
 ---
+
 
 ## What is Boundary Value Analysis?
 

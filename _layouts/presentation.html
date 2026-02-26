@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/css/presentation.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            background-color: #050505;
+        }
+    </style>
+</head>
+
+<body class="presentation-container">
+    {{ content }}
+
+    <div class="nav-controls">
+        <button id="prevBtn" class="nav-btn" aria-label="Previous Slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+        </button>
+        <div class="slide-indicator"><span id="currentSlide">1</span> / <span id="totalSlides">1</span></div>
+        <button id="nextBtn" class="nav-btn" aria-label="Next Slide">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const currentLabel = document.getElementById('currentSlide');
+            const totalLabel = document.getElementById('totalSlides');
+
+            let currentIdx = 0;
+            totalLabel.textContent = slides.length;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                currentIdx = index;
+                currentLabel.textContent = index + 1;
+
+                // Update button states
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === slides.length - 1;
+            }
+
+            function nextSlide() {
+                if (currentIdx < slides.length - 1) showSlide(currentIdx + 1);
+            }
+
+            function prevSlide() {
+                if (currentIdx > 0) showSlide(currentIdx - 1);
+            }
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') nextSlide();
+                if (e.key === 'ArrowLeft' || e.key === 'PageUp') prevSlide();
+            });
+
+            // Button navigation
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Initialize
+            showSlide(0);
+        });
+    </script>
+</body>
+
+</html>

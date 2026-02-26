@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <meta name="description"
+        content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <link rel="stylesheet" href="/assets/css/stylish-blog.css">
+    <!-- Add Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="stylish-post-body">
+
+    <!-- Hero Section -->
+    <header class="post-hero"
+        style="background-image: url('{% if page.image %}{{ page.image | relative_url }}{% else %}{{ "
+        /imgs/work-victory.jpg" | relative_url }}{% endif %}');">
+        <div class="post-hero-content">
+            <h1 class="post-hero-title" style="font-size: 3rem;">{{ page.title }}</h1>
+            <div class="post-meta">
+                <span>{{ page.date | date: "%B %d, %Y" }}</span>
+                <span>•</span>
+                <span>By {{ page.author | default: site.author }}</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <main class="post-content-wrapper">
+        <article class="post-content">
+            {{ content }}
+        </article>
+
+        <!-- Author Section -->
+        <div class="author-card">
+            <img src="/imgs/anandhukrishnan.jpeg" alt="Author" class="author-avatar"
+                onerror="this.src='/imgs/logo.png'">
+            <div class="author-info">
+                <h4>{{ page.author | default: site.author }}</h4>
+                <p class="author-bio">Software Engineer & Tech Enthusiast | Building modern web experiences</p>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="post-navigation">
+            {% if page.previous.url %}
+            <a href="{{ page.previous.url | relative_url }}" class="nav-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Previous
+            </a>
+            {% else %}
+            <span></span>
+            {% endif %}
+
+            <a href="/blog/" class="nav-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                Blog Home
+            </a>
+
+            {% if page.next.url %}
+            <a href="{{ page.next.url | relative_url }}" class="nav-button">
+                Next
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+            </a>
+            {% else %}
+            <span></span>
+            {% endif %}
+        </div>
+    </main>
+
+</body>
+
+</html>

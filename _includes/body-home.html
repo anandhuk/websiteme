@@ -57,33 +57,30 @@
                   <h2>Blogs</h2>
                   <div class="work--lockup">
                     <ul class="slider">
-                      <li class="slider--item slider--item-left">
-                        <a href="#0">
-                          <div class="slider--item-image">
-                            <img src="/imgs/work-victory.jpg" alt="Victory">
-                          </div>
-                          <p class="slider--item-title">Blogs</p>
-                          <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                        </a>
-                      </li>
-                      <li class="slider--item slider--item-center">
-                        <a href="#0">
-                          <div class="slider--item-image">
-                            <img src="/imgs/jekyll_banner1.jpg" alt="Metiew and Smith">
-                          </div>
-                          <p class="slider--item-title">Blogs</p>
-                          <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                        </a>
-                      </li>
-                      <li class="slider--item slider--item-right">
-                        <a href="#0">
-                          <div class="slider--item-image">
-                            <img src="/imgs/work-alex-nowak.jpg" alt="Alex Nowak">
-                          </div>
-                          <p class="slider--item-title">Blogs</p>
-                          <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
-                        </a>
-                      </li>
+                      {% for post in site.posts limit:3 %}
+                        {% assign index = forloop.index %}
+                        {% assign position_class = "" %}
+                        {% if index == 1 %}
+                          {% assign position_class = "slider--item-left" %}
+                        {% elsif index == 2 %}
+                          {% assign position_class = "slider--item-center" %}
+                        {% elsif index == 3 %}
+                          {% assign position_class = "slider--item-right" %}
+                        {% endif %}
+                        <li class="slider--item {{ position_class }}">
+                          <a href="{{ post.url }}">
+                            <div class="slider--item-image">
+                              {% if post.image %}
+                                <img src="{{ post.image }}" alt="{{ post.title }}">
+                              {% else %}
+                                <img src="/imgs/work-victory.jpg" alt="{{ post.title }}">
+                              {% endif %}
+                            </div>
+                            <p class="slider--item-title">{{ post.title }}</p>
+                            <p class="slider--item-description">{{ post.excerpt | strip_html | truncate: 100 }}</p>
+                          </a>
+                        </li>
+                      {% endfor %}
                     </ul>
                     <div class="slider--prev">
                       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"

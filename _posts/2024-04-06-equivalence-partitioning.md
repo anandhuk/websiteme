@@ -1,8 +1,7 @@
 ---
-layout: post
+layout: stylish-post
 title:  "Equivalence Partitioning: A Beginner's Guide to Effective Test Case Design"
 date:   2024-04-06 02:22:37 +0530
-categories: Test Cases
 author: anandhu
 categories: [ testing, testcases ]
 tags: [testing, testcases]
@@ -11,9 +10,10 @@ featured: true
 hidden: false
 rating: 4.5
 description: Learn equivalence partitioning with practical examples. This beginner's guide explains the test design technique, its benefits, and how to apply it with real-world scenarios.
-permalink : /article/equivalence-partitioning.html
+permalink: /article/equivalence-partitioning.html
 tags: equivalence partitioning, test case design, black box testing, software testing techniques, test case examples, QA testing methods, input partitioning
 ---
+
 
 
 ## What is Equivalence Partitioning?
