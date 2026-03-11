@@ -306,3 +306,109 @@
     margin-top: 2rem;
     max-width: 800px;
 }
+
+/* Table Styles */
+.slide-table {
+    width: 95%;
+    max-width: 1200px;
+    margin-top: 1rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: min(1.8rem, 4.5vw);
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.slide-table th,
+.slide-table td {
+    padding: 1.5rem 2.5rem;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.slide-table th {
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 800;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+.slide-table tr:last-child td {
+    border-bottom: none;
+}
+
+.slide-table td {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.slide-table tr:hover td {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Maturity Stages */
+.maturity-stages {
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    margin-top: 4rem;
+    justify-content: center;
+}
+
+.stage {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    padding: 3rem;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    flex: 1;
+    max-width: 450px;
+    transition: transform 0.3s ease;
+}
+
+.stage:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.stage h3 {
+    font-size: 2rem;
+    color: #a855f7;
+    margin-bottom: 1.5rem;
+    font-weight: 800;
+}
+
+.stage p {
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Slide Code */
+.slide-code {
+    margin-top: 2.5rem;
+    background: #1e1e1e;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: left;
+    width: fit-content;
+}
+
+.slide-code p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.slide-code code {
+    font-family: 'Fira Code', monospace;
+    font-size: 1.8rem;
+    color: #4ade80;
+}
