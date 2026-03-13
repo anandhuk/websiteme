@@ -12,7 +12,7 @@ permalink: /article/gdpr-compliance-maturity.html
     <div class="slide-content">
         <h1 class="slide-title">GDPR Readiness: From Concept to Implementation</h1>
         <p class="slide-subtitle">Understanding the Journey from "Ready" to "Implemented"</p>
-        <p>Presenter: Anandhu Krishnan</p>
+        <p>Presenter: Navaneeth krishnan</p>
     </div>
 </section>
 
